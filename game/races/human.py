@@ -1,5 +1,6 @@
-from races.race import Race
-from characters.character import Stats
+from races import Race
+from characters import Stats
+
 
 class Human(Race):
     def __init__(self):

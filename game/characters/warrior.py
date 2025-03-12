@@ -1,6 +1,6 @@
-from characters.player import Player
-from characters.character import Stats
-from races.human import Human
+from characters import Player, Stats
+from races import Human
+
 
 class Warrior(Player):
     def __init__(self, name):

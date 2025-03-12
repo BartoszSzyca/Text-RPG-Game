@@ -1,4 +1,5 @@
-from characters.character import Character
+from characters import Character
+
 
 class Player(Character):
     def __init__(self, name, stats, race):
