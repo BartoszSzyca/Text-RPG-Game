@@ -1,5 +1,5 @@
-from .warrior import Warrior
-from .character import Character, Stats
+from .character import Character, Stats, Attributes
 from .player import Player
+from .warrior import Warrior
 
-__all__ = ["Warrior", "Character", "Stats", "Player"]
+__all__ = ["Character", "Stats", "Attributes", "Player", "Warrior"]

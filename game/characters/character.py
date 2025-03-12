@@ -1,5 +1,4 @@
-from entities import Entity
-
+from entities.entity import Entity
 
 class Stats:
     def __init__(self, strength, agility, endurance):
@@ -7,12 +6,10 @@ class Stats:
         self.agility = agility
         self.endurance = endurance
 
-
 class Attributes:
     def __init__(self, health, attack_power):
         self.health = health
         self.attack_power = attack_power
-
 
 class Character(Entity):
     def __init__(self, name, stats, race):
@@ -27,5 +24,4 @@ class Character(Entity):
         return Attributes(health, attack_power)
 
     def __str__(self):
-        return (f"{self.name} (Health: {self.attributes.health}, Attack: "
-                f"{self.attributes.attack_power})")
+        return f"{self.name} (Health: {self.attributes.health}, Attack: {self.attributes.attack_power})"
