@@ -1,19 +1,15 @@
 from characters import Warrior
 from monsters import Goblin
-
-
-def initiate_combat(player, monster):
-    print("Rozpoczyna się walka!")
-    while player.is_alive() and monster.is_alive():
-        player.attack(monster)
-        if monster.is_alive():
-            monster.attack(player)
+from core import initiate_combat
+from locations import Forest
 
 
 def main():
     player = Warrior("Aragorn")
     goblin = Goblin("Goblin")
+    location = Forest()
 
+    print(f"Witaj w {location.name}!")
     print(f"Spotykasz {goblin.name}!")
 
     initiate_combat(player, goblin)
