@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "name": "Miecz",
+      "description": "Ostrze ze stali",
+      "value": 10
+    },
+    {
+      "name": "Tarcza",
+      "description": "Drewniana tarcza",
+      "value": 5
+    },
+    {
+      "name": "Mikstura zdrowia",
+      "description": "Leczy rany",
+      "value": 8
+    }
+  ]
+}
