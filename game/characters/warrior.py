@@ -1,7 +1,7 @@
 from .player import Player
 from .character import Stats
-
 from races import Human
+
 
 class Warrior(Player):
     def __init__(self, name):
