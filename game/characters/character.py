@@ -20,13 +20,20 @@ class Character(Entity):
         super().__init__(name)
         self.stats = stats
         self.race = race
-        self.attributes = self.calculate_attributes()
+        if stats and race:
+            self.attributes = self.calculate_attributes()
+        else:
+            self.attributes = None
 
     def calculate_attributes(self):
         health = 100 + self.stats.endurance * 10
         attack_power = self.stats.strength * 5
         dodge_chance = self.stats.agility * 0.1
         return Attributes(health, attack_power, dodge_chance)
+
+    def heal(self, amount):
+        self.attributes.health += amount
+        print(f"{self.name} leczy się o {amount} punktów zdrowia.")
 
     def __str__(self):
         return (f"{self.name} (Health: {self.attributes.health}, "

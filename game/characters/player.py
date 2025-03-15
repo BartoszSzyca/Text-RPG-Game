@@ -6,6 +6,15 @@ class Player(Character):
         super().__init__(name, stats, race)
         self.inventory = []
 
+    def show_inventory(self):
+        if not self.inventory:
+            print("Nie masz żadnych przedmiotów w ekwipunku.")
+            return
+
+        print("Ekwipunek:")
+        for i, item in enumerate(self.inventory):
+            print(f"{i + 1}. {item.name} - {item.description}")
+
     def add_item(self, item):
         self.inventory.append(item)
         print(f"{self.name} dodaje {item.name} do ekwipunku.")
