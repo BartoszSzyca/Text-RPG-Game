@@ -1,19 +1,20 @@
-{
-  "items": [
+[
+  {
+    "name": "Miecz",
+    "description": "Ostrzejszy miecz.",
+    "value": 10,
+    "attack_bonus": 5
+  },
+  {
+    "name": "Tarcza",
+    "description": "Solidna tarcza.",
+    "value": 8,
+    "defense_bonus": 3
+  },
     {
-      "name": "Miecz",
-      "description": "Ostrze ze stali",
-      "value": 10
-    },
-    {
-      "name": "Tarcza",
-      "description": "Drewniana tarcza",
-      "value": 5
-    },
-    {
-      "name": "Mikstura zdrowia",
-      "description": "Leczy rany",
-      "value": 8
-    }
-  ]
-}
+    "name": "Mikstura życia",
+    "description": "Przywraca zdrowie.",
+    "value": 5,
+    "health_bonus": 20
+  }
+]
