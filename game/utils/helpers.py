@@ -1,4 +1,33 @@
 import random
+import json
+
+
+def load_json(cls):
+    """
+    Ładuje dane z pliku JSON i tworzy instancje klasy.
+
+    Args:
+        cls: Klasa, której instancje mają być tworzone.
+
+    Returns:
+        Lista instancji klasy.
+    """
+    file_name = cls.__name__.lower()
+    file_path = f"data/{file_name}s.json"
+    try:
+        with open(file_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            instances = [instance for instance in data]
+            return instances
+    except FileNotFoundError:
+        print(f"Błąd: Plik {file_path} nie został znaleziony.")
+        return []
+    except json.JSONDecodeError:
+        print(f"Błąd: Plik {file_path} zawiera niepoprawne dane JSON.")
+    except Exception as e:
+        print(f"Wystąpił nieoczekiwany błąd podczas ładowania danych z pliku "
+              f"{file_path}: {e}")
+    return []
 
 
 def generate_random_number(min_value, max_value):
