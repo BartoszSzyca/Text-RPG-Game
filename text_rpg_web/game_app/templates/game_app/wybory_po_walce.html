@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Co dalej?</title>
+</head>
+<body>
+    <h1>CO DALEJ?</h1>
+    <p>Stoisz na leśnej polanie. Coś ci podpowiada, że powinieneś iść dalej.</p>
+    <p>Widzisz dwie wyraźne ścieżki:</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" name="wybor_drogi" value="wasna_sciezka">1. Podążaj **Wąską Ścieżką** prowadzącą w głąb gęstego lasu. Wydaje się cicha i bezpieczna, ale co się za nią kryje?</button><br><br>
+        <button type="submit" name="wybor_drogi" value="szeroki_trakt">2. Idź **Szerokim Traktem** w kierunku ledwie widocznej mgły. Może to droga do cywilizacji... albo czegoś gorszego.</button>
+    </form>
+</body>
+</html>

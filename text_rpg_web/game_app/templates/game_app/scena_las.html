@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scena w Lesie</title>
+    <style>
+        body { font-family: monospace; white-space: pre-wrap; }
+        .stats { border: 1px solid #ccc; padding: 10px; margin-bottom: 20px; }
+        .options button { margin-right: 10px; padding: 8px 15px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>GĘSTY LAS</h1>
+
+    <div class="stats">
+        <h2>{{ gracz.imie }}</h2>
+        <p>Poziom: {{ gracz.poziom }} | Doświadczenie: {{ gracz.doswiadczenie }}/{{ gracz.exp_do_nastepnego_poziomu }}</p>
+        <p>HP: {{ gracz.hp }}/{{ gracz.max_hp }} | Siła: {{ gracz.sila }} | Zręczność: {{ gracz.zrecznosc }} | Wytrzymałość: {{ gracz.wytrzymalosc }}</p>
+        <p>Ekwipunek: {{ ekwipunek|join:", " }}</p>
+    </div>
+
+    {% if drapiezniki %}
+    <div class="stats">
+        <h2>{{ drapiezniki.nazwa }}</h2>
+        <p>HP: {{ drapiezniki.hp }}/{{ drapiezniki.max_hp }}</p>
+    </div>
+    {% endif %}
+
+    <p>{{ komunikat|safe }}</p> {# Użyj |safe, bo widok może wstawić HTML (np. <br>) #}
+
+    {% if gracz.hp > 0 and drapiezniki.hp > 0 %}
+        <h2>Co robisz?</h2>
+        <form method="post" class="options">
+            {% csrf_token %}
+            <button type="submit" name="action" value="atak">Atakuj</button>
+            <button type="submit" name="action" value="uciekaj">Uciekaj (niebezpieczne!)</button>
+        </form>
+    {% elif gracz.hp <= 0 %}
+        <p>Jesteś martwy. <a href="{% url 'menu_glowne' %}">Wróć do menu</a></p>
+    {% else %} {# Drapieżnik pokonany #}
+        <p><a href="{% url 'wybory_po_walce' %}">Kontynuuj podróż...</a></p>
+    {% endif %}
+
+</body>
+</html>

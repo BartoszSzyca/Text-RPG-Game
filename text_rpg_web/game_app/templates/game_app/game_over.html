@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Koniec Gry</title>
+</head>
+<body>
+    <h1>--- PRZEGRAŁEŚ! ---</h1>
+    {% if gracz %}
+        <p>Twoje statystyki w momencie porażki:</p>
+        <ul>
+            <li>Imię: {{ gracz.imie }}</li>
+            <li>Poziom: {{ gracz.poziom }}</li>
+            <li>HP: {{ gracz.hp }}/{{ gracz.max_hp }}</li>
+        </ul>
+    {% endif %}
+    <p>Możesz spróbować ponownie, wybierając 'Nowa Gra'.</p>
+    <p><a href="{% url 'menu_glowne' %}">Wróć do menu głównego</a></p>
+</body>
+</html>
