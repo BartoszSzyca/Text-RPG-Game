@@ -1,4 +1,4 @@
-from utils.helpers import load_json
+from game.utils.helpers import load_json
 import random
 
 
