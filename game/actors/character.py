@@ -1,16 +1,14 @@
 from .entity import Entity
-from races import Race
-from game.definitions.profession import Profession
-from items import Item
-from items.item import Weapon
-# import uuid
-
-reka = Weapon(
-    "Pusta ręka",
-    "Nic w niej nie trzymasz.",
-    damage=0,
-    slot="main_hand",
-)
+from definitions import Race
+from definitions import Profession
+# from definitions.item import Weapon,Item
+#
+# reka = Weapon(
+#     "Pusta ręka",
+#     "Nic w niej nie trzymasz.",
+#     damage=0,
+#     slot="main_hand",
+# )
 
 
 class Stats:
@@ -206,12 +204,12 @@ class Character(Entity):
     #     """Dodaje przedmiot do ekwipunku."""
     #     self.inventory.append(item)
 
-    def add_item_to_inventory(self, item: Item):
+    def add_item_to_inventory(self, item: "Item"):
         """Dodaje przedmiot do inwentarza."""
         self.inventory.append(item)
         print(f"{self.name} dodaje {item.name} do inwentarza.")
 
-    def remove_item_from_inventory(self, item: Item):
+    def remove_item_from_inventory(self, item: "Item"):
         """Usuwa przedmiot z ekwipunku."""
         if item in self.inventory:
             self.inventory.remove(item)
@@ -219,7 +217,7 @@ class Character(Entity):
         else:
             print(f"{self.name} nie ma {item.name} w inwentarzu.")
 
-    def equip_item(self, item: Item):
+    def equip_item(self, item: "Item"):
         """
         Wyposaża przedmiot w odpowiednim slocie.
         Args:
