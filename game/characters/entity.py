@@ -1,4 +1,4 @@
-import uuid  # Do generowania unikalnych identyfikatorów
+import uuid
 
 
 class Entity:
