@@ -1,6 +1,6 @@
 from .character import Character
 from races import Race
-from .profession import Profession
+from game.definitions.profession import Profession
 
 class Player(Character):
     """

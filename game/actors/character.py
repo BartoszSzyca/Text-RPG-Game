@@ -1,6 +1,6 @@
 from .entity import Entity
 from races import Race
-from .profession import Profession
+from game.definitions.profession import Profession
 from items import Item
 from items.item import Weapon
 # import uuid

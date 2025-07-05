@@ -1,6 +1,6 @@
 from .character import Character, Stats, Attributes
 from .player import Player
-from .profession import Warrior
+from game.definitions.profession import Warrior
 from .npc import NPC
 from .entity import Entity
 
